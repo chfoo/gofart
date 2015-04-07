@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<div id="hero">
+    <p>Fartenize your URL!</p>
+</div>
+
+<div role="main" class="main">
+    {% if 'fartlink' in globals() %}
+    <div class="output">
+        <p>
+            Your enfartened URL is:<br>
+            <input type="url" class="fart_link_result fart_form_input" readonly
+                   onclick="this.select();" value="{{ fartlink }}">
+        </p>
+    </div>
+    {% end %}
+
+    {% if 'error' in globals() %}
+    <div class="error">
+        <p><strong>The URL given is not supported.</strong></p>
+        <p>Only URLs with HTTP or HTTPS is allowed.</p>
+    </div>
+    {% end %}
+
+    <div id="fart_form">
+        <form method="post" action="{{ reverse_url('index') }}">
+            {% module xsrf_form_html() %}
+            <input class="fart_form_input" type="url" name="link" placeholder="http://example.com/">
+            <div>
+                <input type="checkbox" name="rot13" value="yes" id="fart_form_input_rot13" checked>
+                <label for="fart_form_input_rot13">ROT-13</label>
+            </div>
+            <button class="fart_form_input" type="submit">Make Fartlink</button>
+        </form>
+    </div>
+
+    <p>GoFart is a URL fartener. It provides a URL fartening service.</p>
+</div>
+
+{% end %}

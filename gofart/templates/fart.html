@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<meta http-equiv="refresh" content="3; url={{ dest_link }}">
+<meta name="robots" content="nofollow">
+{% end %}
+
+{% block body %}
+
+<div id="big_fart_hero">
+    <p id="big_fart_hero_text">FART <span class="nobreak">🍑💨</span></p>
+</div>
+
+<audio autoplay>
+    <source type="audio/ogg" src="{{ static_url(fart_ogg) }}">
+    <source type="audio/mp4" src="{{ static_url(fart_mp3) }}">
+</audio>
+
+<div class="main">
+    <p id="dest_link"><a href="{{ dest_link }}">Continue to {{ dest_link }}</a></p>
+    <p><a href="{{ reverse_url('index') }}">GoFart URL Fartener</a></p>
+</div>
+
+{% end %}

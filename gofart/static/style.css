@@ -1,0 +1,100 @@
+body, html {
+    color: #1B1B1B;
+    background-color: #cfcac4;
+    font-family: sans-serif;
+    box-sizing: border-box;
+    margin: 0px;
+}
+
+a:link {
+    color: blue;
+}
+
+a:link {
+    color: purple;
+}
+
+a:active, a:hover {
+    color: red;
+}
+
+.nobreak {
+    white-space: nowrap
+}
+
+.main {
+    margin: 1em;
+}
+
+#hero, #big_fart_hero {
+    color: #F6F6F6;
+    background-color: #52854D;
+    padding: 0.5em;
+}
+
+#hero {
+    font-size: 2em;
+    text-shadow: black 0.1em 0.1em 0.1em;
+    font-weight: bold;
+}
+
+#fart_form {
+    font-size: 1.2em;
+}
+
+.fart_form_input {
+    width: 100%;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    line-height: 2em;
+}
+
+.fart_link_result {
+    width: 100%;
+}
+
+.error {
+    background-color: #A1795D;
+    border-radius: 0.5em;
+    padding: 0.5em;
+    color: white;
+}
+
+@-webkit-keyframes fart_it {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-0.5em);
+    }
+}
+
+@keyframes fart_it {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-0.5em);
+    }
+}
+
+#big_fart_hero {
+    font-size: 5em;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: black 0.1em 0.1em 0.1em;
+}
+
+#big_fart_hero_text {
+    -webkit-animation-duration: 0.5s;
+    animation-duration: 0.5s;
+    -webkit-animation-name: fart_it;
+    animation-name: fart_it;
+    -webkit-animation-direction: alternate;
+    animation-direction: alternate;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+}
+
