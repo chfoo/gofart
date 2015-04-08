@@ -27,9 +27,9 @@
     <div id="fart_form">
         <form method="post" action="{{ reverse_url('index') }}">
             {% module xsrf_form_html() %}
-            <input class="fart_form_input" type="url" name="link" placeholder="http://example.com/">
+            <input class="fart_form_input" type="url" name="link" placeholder="http://example.com/" value="{{ globals().get('link', '') }}">
             <div>
-                <input type="checkbox" name="rot13" value="yes" id="fart_form_input_rot13" checked>
+                <input type="checkbox" name="rot13" value="yes" id="fart_form_input_rot13" {{ 'checked' if globals().get('rot13', True) else '' }}>
                 <label for="fart_form_input_rot13">ROT-13</label>
             </div>
             <button class="fart_form_input" type="submit">Make Fartlink</button>

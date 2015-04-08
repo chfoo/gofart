@@ -62,16 +62,19 @@ class IndexHandler(BaseHandler):
         self.render('index.html')
 
     def post(self):
+        link = self.get_argument('link', '')
+        rot13 = self.get_argument('rot13', False) == 'yes'
+
         try:
             fartlink = self.application.fartenize_url(
-                self.get_argument('link', ''),
+                link,
                 self.request.protocol, self.request.host,
-                rot13=self.get_argument('rot13', False) == 'yes'
+                rot13=rot13
             )
         except ValueError:
-            self.render('index.html', error=True)
+            self.render('index.html', error=True, link=link, rot13=rot13)
         else:
-            self.render('index.html', fartlink=fartlink)
+            self.render('index.html', fartlink=fartlink, link=link, rot13=rot13)
 
 
 class FartHandler(BaseHandler):
